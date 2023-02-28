@@ -361,7 +361,7 @@ public class LayoutManager implements IContainerInputHandler, IContainerTooltipH
 
             private boolean getIsAccessibleControlEventKey() {
                 if (Minecraft.isRunningOnMac) {
-                    return Keyboard.getEventKey() == Keyboard.KEY_LMETA || Keyboard.getEventKey() == Keyboard.KEY_RMENU;
+                    return Keyboard.getEventKey() == Keyboard.KEY_LMETA || Keyboard.getEventKey() == Keyboard.KEY_RMETA;
                 }
                 return Keyboard.getEventKey() == Keyboard.KEY_LCONTROL
                         || Keyboard.getEventKey() == Keyboard.KEY_RCONTROL;
