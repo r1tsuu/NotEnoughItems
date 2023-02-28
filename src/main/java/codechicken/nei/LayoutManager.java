@@ -363,12 +363,14 @@ public class LayoutManager implements IContainerInputHandler, IContainerTooltipH
                 if (Minecraft.isRunningOnMac) {
                     return Keyboard.getEventKey() == Keyboard.KEY_LMETA || Keyboard.getEventKey() == Keyboard.KEY_RMENU;
                 }
-               return Keyboard.getEventKey() == Keyboard.KEY_LCONTROL || Keyboard.getEventKey() == Keyboard.KEY_RCONTROL;
+                return Keyboard.getEventKey() == Keyboard.KEY_LCONTROL
+                        || Keyboard.getEventKey() == Keyboard.KEY_RCONTROL;
             }
+
             @Override
             public boolean onButtonPress(boolean rightclick) {
                 if (!rightclick) {
-                    if (Keyboard.getEventKeyState() && (getIsAccessibleControlEventKey())) {
+                    if (Keyboard.getEventKeyState() && getIsAccessibleControlEventKey()) {
                         NEIClientConfig.cycleSetting("inventory.cheatmode", 3);
                     } else {
                         if (Keyboard.getEventKeyState() && (Keyboard.getEventKey() == Keyboard.KEY_LSHIFT
